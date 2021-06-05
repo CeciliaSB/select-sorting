@@ -59,7 +59,7 @@ function selectSort (e){ //select sorting
             let iterate = document.createElement("div");
             iterate.classList.add("iterate");
             let iterationN = document.createElement("span");
-            iterationN.innerHTML = "Iteration" + counter;
+            iterationN.innerHTML = " " + counter;
             iterate.appendChild(iterationN);
             counter++;
             if(arrGeneratedCards[min].number>arrGeneratedCards[i].number){
