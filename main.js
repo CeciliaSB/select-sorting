@@ -21,21 +21,16 @@ function drawCards(e) {
         let randomSuit = Math.floor(Math.random() * 4);
         number.classList.add(suits[randomSuit]);
         let randomNumber = Math.floor(Math.random() *13);
-        switch(randomNumber){
-            case 1:
-                number.innerText = "A";
-                break;
-            case 10: 
-                number.innerText = "J";
-                break;
-            case 11:
-                number.innerText = "Q";
-                break;
-            case 12:
-                number.innerText = "K";
-                break;
-            default:
-                number.innerText = numbers[randomNumber];
+        if (randomNumber ===10){
+            number.innerText = "J";
+        } else if (randomNumber === 0){
+            number.innerText ="A";
+        } else if (randomNumber === 11) {
+            number.innerText = "Q";
+        } else if (randomNumber ===12){
+            number.innerText = "K";
+        } else {
+            number.innerText = numbers[randomNumber];
         }
         card.appendChild(number);
         generatedCards.appendChild(card);
@@ -55,7 +50,7 @@ function selectSort (e){ //select sorting
     let min = 0;
     let counter = 1;
     while(min < arrGeneratedCards.length-1){
-        for(let i = min +1; i < arrGeneratedCards.length-1;i++){
+        for(let i = min +1; i < arrGeneratedCards.length;i++){
             let iterate = document.createElement("div");
             iterate.classList.add("iterate");
             let iterationN = document.createElement("span");
